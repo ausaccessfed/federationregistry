@@ -53,7 +53,7 @@
       </table>
     
       <br><br>
-      If you have any questions about why this Identity Provider was not accepted please contact the <a href="http://support.aaf.edu.au">AAF support desk</a>.
+      If you have any questions about why this Identity Provider was not accepted please contact the <g:message code="branding.fr.federationinfo.support.link.long" />.
     
     </body>
   </html>

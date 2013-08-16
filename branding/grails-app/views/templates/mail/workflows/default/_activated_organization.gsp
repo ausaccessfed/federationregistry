@@ -4,7 +4,7 @@
   <html>
     <head></head>
     <body>
-      The Organisation which you've registered with the Australian Access Federation has been <strong>accepted</strong>. You can now complete final setup tasks.
+      The Organisation which you've registered with the <g:message code="branding.fr.federationinfo.federationname.long" /> has been <strong>accepted</strong>. You can now complete final setup tasks.
       <br><br>
       Please keep this email for future reference.
       <br><br>
@@ -42,7 +42,7 @@
          <br><br>
           i.) Register an Identity Provider for your organisation using the publicly accessible <g:link controller='bootstrap' action='idp' absolute='true'>Identity Provider creation page</g:link>. Once this Identity Provider has completed the setup process you'll be able to login to Federation Registry using your institution provided account.
           <br><br>
-          ii.) If your Organisation <strong>is not going to setup an Identity Provider</strong> you will have access to create accounts in the AAF Virtual Home Organisation (VHO). If you have not yet been provided details about creating accounts to use with federated services in the VHO please contact the <a href="http://support.aaf.edu.au">AAF support desk</a> for more details.
+          ii.) If your Organisation <strong>is not going to setup an Identity Provider</strong> you will have access to create accounts in the AAF Virtual Home Organisation (VHO). If you have not yet been provided details about creating accounts to use with federated services in the VHO please contact the <g:message code="branding.fr.federationinfo.support.link.long" /> for more details.
 
       <br><br>
       
@@ -61,7 +61,7 @@
       
         <br><br>
       
-      4. You're all done! Welcome to the Australian Access Federation.
+      4. You're all done! Welcome to the <g:message code="branding.fr.federationinfo.federationname.long" />.
     
     </body>
   </html>

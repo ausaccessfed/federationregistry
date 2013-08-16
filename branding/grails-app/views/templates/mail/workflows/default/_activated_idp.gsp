@@ -4,7 +4,7 @@
   <html>
     <head></head>
     <body>
-      The Identity Provider which you've registered with the Australian Access Federation has been <strong>accepted</strong>. You can now complete final setup tasks.
+      The Identity Provider which you've registered with the <g:message code="branding.fr.federationinfo.federationname.long" /> has been <strong>accepted</strong>. You can now complete final setup tasks.
       <br><br>
       Please keep this email for future reference.
       <br><br>
@@ -64,7 +64,7 @@
           <br>
           Your Identity Provider must use a unique EntityID to identify it to the rest of the federation and this value <strong><em>must match both your local configuration and Federation Registry</em></strong>.
           <br><br>
-          Please verify your Identity Provider configuration uses the EntityID shown above under 'Important Details'. <strong>If it doesn't, you can't go any further. Contact the <a href="http://support.aaf.edu.au">AAF support desk</a> for help in resolving this fault</strong>.
+          Please verify your Identity Provider configuration uses the EntityID shown above under 'Important Details'. <strong>If it doesn't, you can't go any further. Contact the <g:message code="branding.fr.federationinfo.support.link.long" /> for help in resolving this fault</strong>.
       
         <br><br>
       2. Ensure Time Sync
@@ -109,7 +109,7 @@
       
         <br><br>
       
-      8. You're all done! Welcome to the Australian Access Federation.
+      8. You're all done! Welcome to the <g:message code="branding.fr.federationinfo.federationname.long" />.
     
     </body>
   </html>

@@ -4,9 +4,9 @@
   <html>
     <head></head>
     <body>
-      This email confirms that the Organisation which you've registered with the Australian Access Federation has been <strong>received but is not yet ready for use</strong>. 
+      This email confirms that the Organisation which you've registered with the <g:message code="branding.fr.federationinfo.federationname.long" /> has been <strong>received but is not yet ready for use</strong>. 
       <br/><br/>
-      Your Organisation will now move through a workflow process that requires approvals by AAF staff.
+      Your Organisation will now move through a workflow process that requires approvals by <g:message code="branding.fr.federationinfo.federationname" /> staff.
       <br/><br/>
       Please allow <strong>up to 48 hours for this to occur</strong>. Upon completion of the process you will receive another email confirming activation of your Organisation and further instructions for completing your deployment.
       <br/><br/>
@@ -31,7 +31,7 @@
       </table>
 
       <br><br>
-      Please contact the <a href="http://support.aaf.edu.au">AAF support desk</a> if the details are incorrect or if you have not received a response within 48 hours.
+      Please contact the <g:message code="branding.fr.federationinfo.support.link.long" /> if the details are incorrect or if you have not received a response within 48 hours.
     
     </body>
   </html>

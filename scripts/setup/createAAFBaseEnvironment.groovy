@@ -110,9 +110,3 @@ federationMonitors.each {
 println "Completed creating base AAF environment"
 true
 
-
-​
-
-
-​
-​

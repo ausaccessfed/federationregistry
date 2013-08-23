@@ -112,7 +112,7 @@ aaf {
           attributeservice.uri = '$host:8443/idp/profile/SAML2/SOAP/AttributeQuery'
         }
         shib23 {
-          displayName = 'Shibboleth Identity Provider (2.3.x)'
+          displayName = 'Shibboleth Identity Provider (2.3.x, 2.4.x)'
           selected = true
           entitydescriptor = '$host/idp/shibboleth'
           post.uri = '$host/idp/profile/SAML2/POST/SSO'
@@ -145,7 +145,7 @@ aaf {
           }
           slo {
             artifact.uri = '$host/Shibboleth.sso/SLO/Artifact'
-            slo.redirect.uri = '$host/Shibboleth.sso/SLO/Redirect'
+            redirect.uri = '$host/Shibboleth.sso/SLO/Redirect'
             soap.uri = '$host/Shibboleth.sso/SLO/SOAP' 
             post.uri = '$host/Shibboleth.sso/SLO/POST'
           }
@@ -157,7 +157,7 @@ aaf {
           }
         }
         shib24 {
-          displayName = "Shibboleth Service Provider (2.4.x)"
+          displayName = "Shibboleth Service Provider (2.4.x, 2.5.x)"
           selected = false
           entitydescriptor = '$host/shibboleth'
           acs {
@@ -176,7 +176,7 @@ aaf {
           }
           slo {
             artifact.uri = '$host/Shibboleth.sso/SLO/Artifact'
-            slo.redirect.uri = '$host/Shibboleth.sso/SLO/Redirect'
+            redirect.uri = '$host/Shibboleth.sso/SLO/Redirect'
             soap.uri = '$host/Shibboleth.sso/SLO/SOAP' 
             post.uri = '$host/Shibboleth.sso/SLO/POST'
           }
@@ -185,6 +185,29 @@ aaf {
             redirect.uri = '$host/Shibboleth.sso/NIM/Redirect' 
             soap.uri = '$host/Shibboleth.sso/NIM/SOAP'
             post.uri = '$host/Shibboleth.sso/NIM/POST'
+          }
+        }
+        simplesamlphp {
+          displayName = "SimpleSAMLphp"
+          selected = false
+          entitydescriptor = '$host/simplesaml/module.php/saml/sp/metadata.php/default-sp'
+          acs {
+            post {
+              uri = '$host/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp'
+              index = 0
+            }
+            artifact {
+              uri = '$host/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp'
+              index = 2
+            }
+          }
+          drs {
+            uri = '$host/simplesaml/module.php/saml/sp/discoresp.php'
+            index = 1
+          }
+          slo {
+            redirect.uri = '$host/simplesaml/module.php/saml/sp/saml2-logout.php/default-sp'
+            soap.uri = '$host/simplesaml/module.php/saml/sp/saml2-logout.php/default-sp' 
           }
         }
       }

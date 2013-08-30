@@ -15,7 +15,7 @@
       <g:link controller="attributeBase" action="list"><g:message encodeAs="HTML"  code="fr.branding.nav.admin.datamanagement" default="Data Management"/></g:link>
     </li>
     <li class="${controllerName == 'adminConsole' ? 'directactive':''}">
-      <g:link controller="adminConsole" action="index"><g:message encodeAs="HTML"  code="fr.branding.nav.admin.console" default="Console"/></g:link>
+      <g:link controller="console" action="index" target="_blank"><g:message encodeAs="HTML"  code="fr.branding.nav.admin.console" default="Console"/></g:link>
     </li>
   </ul>
 

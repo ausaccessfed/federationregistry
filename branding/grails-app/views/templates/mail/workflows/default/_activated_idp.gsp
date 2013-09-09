@@ -76,7 +76,7 @@
         <br><br>
       3. Configure Attribute Release
           <br>
-          Configure your Identity Provider to correctly release attributes to the federation as documented in <a href="http://support.aaf.edu.au/entries/321600-automating-attribute-release">Automating Attribute Release</a>. When asked for the value of <strong>[YOUR UNIQUE URL]</strong> please provide ${g.createLink(controller:'attributeFilter', action:'generate', id:identityProvider.id, absolute:true)}.
+          Configure your Identity Provider to correctly release attributes to the federation as documented in <a href="http://support.aaf.edu.au/entries/22545567-Automating-Attribute-Release">Automating Attribute Release</a>. When asked for the value of <strong>[INTERNALID]</strong> please provide ${fieldValue(bean: identityProvider, field: "id")}.
       
         <br><br><br>
       

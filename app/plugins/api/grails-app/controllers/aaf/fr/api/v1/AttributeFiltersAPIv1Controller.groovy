@@ -52,7 +52,7 @@ class AttributeFiltersAPIv1Controller {
 		attributeFilterGenerationService.generate(builder, federation, identityProvider.id)
 		def xml = writer.toString()
 		
-		render(text:"${xml}\n\n<!-- Exported automatically from Federation Registry at ${new Date()}-->\n\n", contentType:"text/xml", encoding:"UTF-8")		
+		render(text:"${xml}\n\n<!-- Exported automatically from Federation Registry at ${new Date()} -->\n\n", contentType:"text/xml", encoding:"UTF-8")		
 	}
 	
 }

@@ -16,4 +16,4 @@ target
 grails-app/i18n
 *.war
 *DB*
-
+messages.properties

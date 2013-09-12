@@ -15,7 +15,7 @@ class EntityDescriptorService {
 
   def grailsApplication
   def workflowProcessService
-  def roleService
+  aaf.fr.identity.RoleService roleService
   def permissionService
   
   // This is primarily to avoid an issue where cross service calls with a save

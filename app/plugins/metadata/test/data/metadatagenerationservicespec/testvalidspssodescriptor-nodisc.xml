@@ -1,7 +1,4 @@
 <SPSSODescriptor protocolSupportEnumeration='urn:oasis:names:tc:SAML:1.1:protocol urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:2.0:protocol'>
-  <Extensions>
-      <dsr:DiscoveryResponse xmlns:dsr="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" Binding="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" Location="https://test.example.com/Shibboleth.sso/DS" index="1" isDefault="true" />
-    </Extensions>
   <KeyDescriptor use='encryption'>
     <ds:KeyInfo xmlns:ds='http://www.w3.org/2000/09/xmldsig#'>
       <ds:KeyName>key1</ds:KeyName>

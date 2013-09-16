@@ -343,7 +343,8 @@ class MetadataGenerationService {
   }
   
   def SPSSODescriptorExtensions(builder, all, spSSODescriptor) {
-    if(spSSODescriptor.discoveryResponseServices) {
+    def funcDiscoveryResponseServices = spSSODescriptor.discoveryResponseServices?.findAll{it.functioning()}
+    if(all || funcDiscoveryResponseServices) {
       builder.Extensions() {
         spSSODescriptor.discoveryResponseServices?.sort{it.id}.each { endpoint ->
           if(all || endpoint.functioning() ) {

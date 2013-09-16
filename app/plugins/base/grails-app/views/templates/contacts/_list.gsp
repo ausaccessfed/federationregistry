@@ -12,9 +12,9 @@
       <tbody>
         <g:each in="${host.contacts?.sort{it.contact.surname}}" var="contactPerson" status="i">
           <tr>
-            <td>${contactPerson.contact.givenName?.encodeAsHTML()} ${contactPerson.contact.surname?.encodeAsHTML()}</td>
-            <td><a href="mailto:${contactPerson.contact.email?.encodeAsHTML()}">${contactPerson.contact.email?.encodeAsHTML()}</a></td>
-            <td>${contactPerson.type.displayName.encodeAsHTML()}</td>
+            <td>${fieldValue(bean: contactPerson, field: "contact.givenName")} ${fieldValue(bean: contactPerson, field: "contact.surname")}</td>
+            <td><a href="mailto:${contactPerson.contact.email.encodeAsHTML()}">${fieldValue(bean: contactPerson, field: "contact.email")} </a></td>
+            <td>${fieldValue(bean: contactPerson, field: "type.displayName")}</td>
             <td>
               <a href="${createLink(controller:'contacts', action:'show', id: contactPerson.contact.id)}" class="btn btn-small"><g:message encodeAs="HTML" code='label.view'/></a>
               <fr:hasAnyPermission in='["federation:management:${hostType}:${host.id}:contact:remove", "federation:management:contacts"]'>

@@ -1,10 +1,6 @@
 class FoundationUrlMappings {
 
   static mappings = {
-    "/bootstrap/$action?/$id?" {
-      controller = "initialBootstrap"
-    }
-
     "/public/coreutils/$action?/$id?"{
       controller = "coreUtilities"
     }

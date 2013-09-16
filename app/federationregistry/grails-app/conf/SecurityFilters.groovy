@@ -72,7 +72,8 @@ public class SecurityFilters implements InitializingBean {
           response.sendError(404) // Deliberately not 403.
           return
         }
-        log.info("secfilter: ALERT - unauthenticated|${request.remoteAddr}|$params.controller/$params.action")
+        redirect(controller:'console', action: 'index')
+        return false
       }
     }
   }

@@ -56,11 +56,6 @@ wU7I1/N110XAqdxIAZo7giAij4IKE122u7bPYs8YlQ8JoMb4hPJY5g==
       </Extensions>
     </IDPSSODescriptor>
     <SPSSODescriptor protocolSupportEnumeration='uri' />
-    <AttributeAuthorityDescriptor protocolSupportEnumeration='uri'>
-      <Extensions>
-        <shibmd:Scope regexp='false'>scope</shibmd:Scope>
-      </Extensions>
-    </AttributeAuthorityDescriptor>
     <Organization>
       <OrganizationName xml:lang='en'>Test Organization</OrganizationName>
       <OrganizationDisplayName xml:lang='en'>Test Organization Display</OrganizationDisplayName>
@@ -74,11 +69,6 @@ wU7I1/N110XAqdxIAZo7giAij4IKE122u7bPYs8YlQ8JoMb4hPJY5g==
       </Extensions>
     </IDPSSODescriptor>
     <SPSSODescriptor protocolSupportEnumeration='uri' />
-    <AttributeAuthorityDescriptor protocolSupportEnumeration='uri'>
-      <Extensions>
-        <shibmd:Scope regexp='false'>scope</shibmd:Scope>
-      </Extensions>
-    </AttributeAuthorityDescriptor>
     <Organization>
       <OrganizationName xml:lang='en'>Test Organization</OrganizationName>
       <OrganizationDisplayName xml:lang='en'>Test Organization Display</OrganizationDisplayName>

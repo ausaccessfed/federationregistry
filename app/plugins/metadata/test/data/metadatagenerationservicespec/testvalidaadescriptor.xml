@@ -63,6 +63,7 @@ wU7I1/N110XAqdxIAZo7giAij4IKE122u7bPYs8YlQ8JoMb4hPJY5g==
     <TelephoneNumber>(07) 1111 1111</TelephoneNumber>
     <TelephoneNumber>0413 867 208</TelephoneNumber>
   </ContactPerson>
+  <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://test.example.com:8443/idp/profile/SAML2/SOAP/AttributeQuery" />
   <AssertionIDRequestService Binding='urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect' Location='https://test.example.com/assertionidrequestservice/REDIRECT' />
   <NameIDFormat>supported:nameid:format:urn</NameIDFormat>
   <Attribute NameFormat='urn:oasis:names:tc:SAML:2.0:attrname-format:uri' Name='urn:oid:2.5.4.3' FriendlyName='commonName' />

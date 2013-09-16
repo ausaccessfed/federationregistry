@@ -12,11 +12,6 @@
   <SPSSODescriptor protocolSupportEnumeration='uri' />
   <SPSSODescriptor protocolSupportEnumeration='uri' />
   <SPSSODescriptor protocolSupportEnumeration='uri' />
-  <AttributeAuthorityDescriptor protocolSupportEnumeration='uri'>
-    <Extensions>
-      <shibmd:Scope regexp='false'>scope</shibmd:Scope>
-    </Extensions>
-  </AttributeAuthorityDescriptor>
   <Organization>
     <OrganizationName xml:lang='en'>Test Organization</OrganizationName>
     <OrganizationDisplayName xml:lang='en'>Test Organization Display</OrganizationDisplayName>

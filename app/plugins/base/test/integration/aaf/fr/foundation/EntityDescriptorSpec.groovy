@@ -73,11 +73,16 @@ class EntityDescriptorSpec extends IntegrationSpec {
 	
 	def "Ensure EntityDescriptor not empty with AA child"() {
 		when:
-        def o = Organization.build(active:true, approved:true)
-        def ed = EntityDescriptor.build(active:true, approved:true, organization:o)
+    def o = Organization.build(active:true, approved:true)
+    def ed = EntityDescriptor.build(active:true, approved:true, organization:o)
 		def aa = new AttributeAuthorityDescriptor(active:true, approved:true, entityDescriptor:ed)
-		ed.addToAttributeAuthorityDescriptors(aa)
-		
+
+    def soap = new SamlURI(type:SamlURIType.ProtocolBinding, uri:'urn:oasis:names:tc:SAML:2.0:bindings:SOAP', description:'')
+    def attrService = new AttributeService(active:true, approved:true, location:'https://idp.example.org:8443/idp/profile/SAML2/SOAP/AttributeQuery', binding:soap)
+    aa.addToAttributeServices(attrService)
+
+    ed.addToAttributeAuthorityDescriptors(aa)
+
 		then:
 		!ed.empty()
 	}

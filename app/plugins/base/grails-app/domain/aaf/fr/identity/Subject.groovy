@@ -25,10 +25,23 @@ class Subject extends SubjectBase {
 
   // Crude but necessary
   public String getGivenName() {
-    cn?.split(' ')[0]
+    if(cn) {
+      if(cn.contains(' '))
+        cn?.split(' ')[0]
+      else
+        cn
+    } else
+      'INVALID_CN'
   }
 
   public String getSurname() {
-    cn?.split(' ')[1]
+
+    if(cn) {
+      if(cn.contains(' '))
+        cn.split(' ')[1]
+      else
+        'INVALID_CN_FORMAT'
+    } else
+      'INVALID_CN'
   }
 }

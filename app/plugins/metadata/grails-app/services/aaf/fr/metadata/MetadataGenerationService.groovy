@@ -273,17 +273,19 @@ class MetadataGenerationService {
   }
   
   def idpSSODescriptor(builder, all, minimal, roleExtensions, idpSSODescriptor) {
-    if(all || idpSSODescriptor.functioning() ) {
-      builder.IDPSSODescriptor(protocolSupportEnumeration: idpSSODescriptor.protocolSupportEnumerations.sort{it.uri}.collect({it.uri}).join(' ')) {
-      roleDescriptor(builder, all, minimal, roleExtensions, idpSSODescriptor)
-      ssoDescriptor(builder, all, minimal, idpSSODescriptor)
-      
-      idpSSODescriptor.singleSignOnServices?.sort{it.id}.each{ sso -> endpoint(builder, all, minimal, "SingleSignOnService", sso) }
-      idpSSODescriptor.nameIDMappingServices?.sort{it.id}.each{ nidms -> endpoint(builder, all, minimal, "NameIDMappingService", nidms) }
-      idpSSODescriptor.assertionIDRequestServices?.sort{it.id}.each{ aidrs -> endpoint(builder, all, minimal, "AssertionIDRequestService", aidrs) }
-      idpSSODescriptor.attributeProfiles?.sort{it.id}.each{ ap -> samlURI(builder, "AttributeProfile", ap) }
-      if(!minimal)
-        idpSSODescriptor.attributes?.sort{it.base.name}.each{ attr -> attribute(builder, attr)}
+    if(!idpSSODescriptor.attributeAuthorityOnly) {
+      if(all || idpSSODescriptor.functioning() ) {
+        builder.IDPSSODescriptor(protocolSupportEnumeration: idpSSODescriptor.protocolSupportEnumerations.sort{it.uri}.collect({it.uri}).join(' ')) {
+        roleDescriptor(builder, all, minimal, roleExtensions, idpSSODescriptor)
+        ssoDescriptor(builder, all, minimal, idpSSODescriptor)
+
+        idpSSODescriptor.singleSignOnServices?.sort{it.id}.each{ sso -> endpoint(builder, all, minimal, "SingleSignOnService", sso) }
+        idpSSODescriptor.nameIDMappingServices?.sort{it.id}.each{ nidms -> endpoint(builder, all, minimal, "NameIDMappingService", nidms) }
+        idpSSODescriptor.assertionIDRequestServices?.sort{it.id}.each{ aidrs -> endpoint(builder, all, minimal, "AssertionIDRequestService", aidrs) }
+        idpSSODescriptor.attributeProfiles?.sort{it.id}.each{ ap -> samlURI(builder, "AttributeProfile", ap) }
+        if(!minimal)
+          idpSSODescriptor.attributes?.sort{it.base.name}.each{ attr -> attribute(builder, attr)}
+        }
       }
     }
   }

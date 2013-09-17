@@ -15,6 +15,7 @@ class IDPSSODescriptor extends SSODescriptor  {
 		
 	boolean wantAuthnRequestsSigned = false
 	boolean autoAcceptServices = false
+  boolean attributeAuthorityOnly = false
 
 	List singleSignOnServices
 

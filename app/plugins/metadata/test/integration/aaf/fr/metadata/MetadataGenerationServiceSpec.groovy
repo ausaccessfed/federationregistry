@@ -540,7 +540,7 @@ class MetadataGenerationServiceSpec extends IntegrationSpec {
 		
 		idp.addToKeyDescriptors(keyDescriptor)
 		idp.addToKeyDescriptors(keyDescriptor2)
-        idp.addToKeyDescriptors(keyDescriptor3)
+    idp.addToKeyDescriptors(keyDescriptor3)
 		idp.addToContacts(contactPerson)
 		
 		idp.addToArtifactResolutionServices(ars)
@@ -1471,6 +1471,115 @@ class MetadataGenerationServiceSpec extends IntegrationSpec {
     xml.contains('shibmd:Scope')
     def diff = new Diff(expected, strippedXML)
     diff.similar()
+  }
+
+  def "Test valid EntityDescriptor generation where IDPSSODescriptor indicates AttributeAuthorityOnly"() {
+    setup:
+    setupBindings()
+
+    def organization = Organization.build(active:true, approved:true, name:"Test Organization", displayName:"Test Organization Display", lang:"en", url: "http://example.com")
+    def entityDescriptor = EntityDescriptor.build(organization:organization, entityID:"https://test.example.com/myuniqueID", active:true, approved:true)
+
+    def email = "test@example.com"
+    def home = "(07) 1111 1111"
+    def work = "(567) 222 22222"
+    def mobile = "0413 867 208"
+    def contact = Contact.build(givenName:"Test", surname:"User", email:email, homePhone:home, workPhone:work, mobilePhone:mobile)
+    def admin = ContactType.build(name:"administrative")
+    def contactPerson = ContactPerson.build(contact:contact, type:admin)
+
+    def idp = IDPSSODescriptor.build(protocolSupportEnumerations:protocolSupportEnumerations, organization:organization, entityDescriptor:entityDescriptor, approved:true, active:true, attributeAuthorityOnly:aaonly)
+
+    def certificate = new Certificate(data:loadPK())
+    def keyInfo = new KeyInfo(keyName:"key1", certificate:certificate)
+    def encryptionMethod = new EncryptionMethod(algorithm:"http://www.w3.org/2001/04/xmlenc#tripledes-cbc")
+    def keyDescriptor = new KeyDescriptor(roleDescriptor:idp, keyType:KeyTypes.encryption, keyInfo:keyInfo, encryptionMethod:encryptionMethod)
+
+    def certificate2 = new Certificate(data:loadPK2())
+    def keyInfo2 = new KeyInfo(certificate:certificate2)
+    def keyDescriptor2 = new KeyDescriptor(roleDescriptor:idp, keyType:KeyTypes.signing, keyInfo:keyInfo2)
+
+    def certificate3 = new Certificate(data:loadPK())
+    def keyInfo3 = new KeyInfo(certificate:certificate3)
+    def keyDescriptor3 = new KeyDescriptor(roleDescriptor:idp, keyType:KeyTypes.signing, keyInfo:keyInfo3, disabled:true)
+
+    keyDescriptor.id = 1
+    keyDescriptor2.id = 2
+    keyDescriptor3.id = 3
+
+    def ars = new ArtifactResolutionService(descriptor:idp, index:100, active:true, approved:true, isDefault:true, binding:soap, location:"https://test.example.com/ars/artifact")
+    def ars2 = new ArtifactResolutionService(descriptor:idp, index:101, active:true, approved:true, isDefault:false, binding:soap, location:"https://test.example.com/ars/artifact2")
+
+    ars.id = 1
+    ars2.id = 2
+
+    def slo = new SingleLogoutService(descriptor:idp, active:true, approved:true, binding:httpPost, location:"https://test.example.com/slo/POST")
+    def mnid = new ManageNameIDService(descriptor:idp, active:true, approved:true, binding:httpRedirect, location:"https://test.example.com/mnid/REDIRECT")
+    def nidf = new SamlURI(uri:"supported:nameid:format:urn")
+
+    def sso = new SingleSignOnService(descriptor:idp,active:true, approved:true, binding:httpPost, location:"https://test.example.com/sso/POST")
+    def nidms = new NameIDMappingService(descriptor:idp,active:true, approved:true, binding:httpRedirect, location:"https://test.example.com/nameidmappingserivce/REDIRECT")
+    def aidrs = new AssertionIDRequestService(descriptor:idp,active:true, approved:true, binding:httpRedirect, location:"https://test.example.com/assertionidrequestservice/REDIRECT")
+
+    def ba1 =  new AttributeBase(oid:'2.5.4.3', nameFormat: attrUri, legacyName:'urn:mace:dir:attribute-def:cn', name:'commonName', description:'An individuals common name, typically their full name. This attribute should not be used in transactions where it is desirable to maintain user anonymity.', category:coreCategory, specificationRequired:false).save()
+    def ba2 =  new AttributeBase(oid:'2.5.4.4', nameFormat: attrUri, legacyName:'urn:mace:dir:attribute-def:sn', name:'surname', description:'Surname or family name', category:optionalCategory, specificationRequired:false).save()
+    def ba3 =  new AttributeBase(oid:'2.5.4.42', nameFormat: attrUri, legacyName:'urn:mace:dir:attribute-def:givenName', name:'givenName', description:'Given name of a person', category:optionalCategory, specificationRequired:false).save()
+    def ba4 =  new AttributeBase(oid:'1.3.6.1.4.1.5923.1.1.1.7', nameFormat: attrUri, legacyName:'urn:mace:dir:attribute-def:eduPersonEntitlement', name:'eduPersonEntitlement', description:'Member of: URI (either URL or URN) that indicates a set of rights to specific resources based on an agreement across the releavant community', category:coreCategory, specificationRequired:true).save()
+
+    def attr1 = new Attribute(idpSSODescriptor:idp, base:ba1)
+    def attr2 = new Attribute(idpSSODescriptor:idp, base:ba2)
+    def attr3 = new Attribute(idpSSODescriptor:idp, base:ba3)
+    def attr4 = new Attribute(idpSSODescriptor:idp, base:ba4)
+    attr4.addToValues(new AttributeValue(value:'urn:mace:test:attr:value:1'))
+    attr4.addToValues(new AttributeValue(value:'urn:mace:test:attr:value:2'))
+    attr4.addToValues(new AttributeValue(value:'urn:mace:test:attr:value:3'))
+
+    idp.addToKeyDescriptors(keyDescriptor)
+    idp.addToKeyDescriptors(keyDescriptor2)
+    idp.addToKeyDescriptors(keyDescriptor3)
+    idp.addToContacts(contactPerson)
+
+    idp.addToArtifactResolutionServices(ars)
+    idp.addToArtifactResolutionServices(ars2)
+    idp.addToSingleLogoutServices(slo)
+    idp.addToManageNameIDServices(mnid)
+    idp.addToNameIDMappingServices(nidms)
+    idp.addToAssertionIDRequestServices(aidrs)
+    idp.addToNameIDFormats(nidf)
+    idp.addToSingleSignOnServices(sso)
+
+    idp.addToAttributes(attr1)
+    idp.addToAttributes(attr2)
+    idp.addToAttributes(attr3)
+    idp.addToAttributes(attr4)
+
+    def aa = new AttributeAuthorityDescriptor(protocolSupportEnumerations:protocolSupportEnumerations, entityDescriptor:entityDescriptor, organization:organization, approved:true, active:true, scope:"test.com")
+    def ep = new AttributeService(descriptor:aa, active:true, approved:true, location:'https://test.example.com:8443/idp/profile/SAML2/SOAP/AttributeQuery', binding:soap)
+    aa.addToAttributeServices(ep)
+
+    idp.collaborator = aa
+    aa.collaborator = idp
+
+    entityDescriptor.addToIdpDescriptors(idp)
+    entityDescriptor.addToAttributeAuthorityDescriptors(aa)
+
+    def expected = loadExpected(expect)
+
+    when:
+    metadataGenerationService.entityDescriptor(builder, false, false, true, entityDescriptor, false)
+
+    def xml = writer.toString()
+    def strippedXML = xml.replace("shibmd:", "").replace("saml:", "") // dodgy as hell but easiest option presently
+    def diff = new Diff(expected, strippedXML)
+
+    then:
+    xml.contains('saml:Attribute')
+    xml.contains('shibmd:Scope')
+    similarExcludingID(diff)
+
+    where:
+    aaonly << [true, false]
+    expect << ['testentitydescriptorwhereidpindicatesonlyaa', 'testentitydescriptorwhereidpdoesnotindicateonlyaa']
   }
 
 }

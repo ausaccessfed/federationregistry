@@ -46,6 +46,20 @@
       </div>
 
       <div class="control-group">
+        <label class="control-label" for="idp.attributeAuthorityOnly"><g:message encodeAs="HTML" code="label.attributeauthorityonly" /></label>
+        <div class="controls">
+
+          <input type="radio" name="idp.attributeauthorityonly" value="true" ${identityProvider.attributeAuthorityOnly ? "checked" : ''} />
+          <g:message encodeAs="HTML" code="label.yes"/>
+
+          <input type="radio" name="idp.attributeauthorityonly" value="false" ${identityProvider.attributeAuthorityOnly ? '' : "checked"}/>
+          <g:message encodeAs="HTML" code="label.no"/>
+
+          <fr:tooltip code='help.fr.identityprovider.attributeauthorityonly' />
+        </div>
+      </div>
+
+      <div class="control-group">
         <label class="control-label" for="idp.scope"><g:message encodeAs="HTML" code="label.scope" /></label>
         <div class="controls">
           <g:textField name="idp.scope"  value="${identityProvider.scope}" class="required span4" size="50" class="required" minlength="4" maxlength="255"/>

@@ -1,0 +1,164 @@
+<EntityDescriptor entityID='https://test.example.com/myuniqueID'>
+  <IDPSSODescriptor protocolSupportEnumeration='urn:oasis:names:tc:SAML:1.1:protocol urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:2.0:protocol'>
+    <Extensions>
+      <Scope regexp='false'>scope</Scope>
+    </Extensions>
+    <KeyDescriptor use='encryption'>
+      <ds:KeyInfo xmlns:ds='http://www.w3.org/2000/09/xmldsig#'>
+        <ds:KeyName>key1</ds:KeyName>
+        <ds:X509Data>
+          <ds:X509Certificate>
+MIIDJDCCAgygAwIBAgIVAO0iiNByCKsIji9RIiEglo5mhsc9MA0GCSqGSIb3DQEB
+BQUAMBkxFzAVBgNVBAMTDnZoby5hYWYuZWR1LmF1MB4XDTA5MDUwNDA2MTgyNVoX
+DTI5MDUwNDA2MTgyNVowGTEXMBUGA1UEAxMOdmhvLmFhZi5lZHUuYXUwggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDWB4cjn/vxigCmLp1J4Y9OW84acUnO
+YFcb3piAy3fc+dhA6AVHCjLrh7tWRIycmcz5qqIbOFnS5qBqg/zBAAhpPGRHjJTd
+9J6iUN6bWXeaTTBAO9QDtYPt8iAymPFCgbr4lil5JuE9cg6uVgb2/RQlZqludxV6
+aUTbtJePJz5KAVMrlfHVguKjH5GpwVcBztMmtRgOPC37Ptyz9Wo/FxpkwpkZCmag
+tQUTBdSL1lr7ySW4CqH4QCgyplBJ2jOnG2IsGZ0TnCQ5cfNuB9Iw8uU5bBMiZvI+
+2xuDQV4KWyz3lbTHLPHk/Iw57/NdwOeKMLmmJRiRwuJJaOS4MNaPoWsbAgMBAAGj
+YzBhMEAGA1UdEQQ5MDeCDnZoby5hYWYuZWR1LmF1hiVodHRwczovL3Zoby5hYWYu
+ZWR1LmF1L2lkcC9zaGliYm9sZXRoMB0GA1UdDgQWBBTRu0lIvmQAgPzWEMhtz7Gm
+eYWEqDANBgkqhkiG9w0BAQUFAAOCAQEAUwiq3jCuhENSyehA2AjhmfBj8DaggSe/
+mRuHUi+IZgPtF09nasr9ZxNVs9S00pxPHjBWwFQ3p+6wY/qQZEQIE0j3iJ9Ly3IL
+RSHZiC0YlrdivcqvvTNc3SO+TW2LWWLbUMSs+IuMVPQpsPvUJ6XN5DuoJHByBbMB
+qgRIRXocTSssKfyRPuPtZHWnlvCgv2fzPmPJqa+z8hnSEdpBTSFCHHgoyRsaTGhg
+VscwWbqvj3YlQhVt62SMTQu82pKdD9I1mS75BHH7Ehb/PHCv7jCSaVc3ztPUquZ6
+wU7I1/N110XAqdxIAZo7giAij4IKE122u7bPYs8YlQ8JoMb4hPJY5g==
+</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+      <EncryptionMethod Algorithm='http://www.w3.org/2001/04/xmlenc#tripledes-cbc' />
+    </KeyDescriptor>
+    <KeyDescriptor use='signing'>
+      <ds:KeyInfo xmlns:ds='http://www.w3.org/2000/09/xmldsig#'>
+        <ds:X509Data>
+          <ds:X509Certificate>
+MIIDJDCCAgygAwIBAgIVAO0iiNByCKsIji9RIiEglo5mhsc9MA0GCSqGSIb3DQEB
+BQUAMBkxFzAVBgNVBAMTDnZoby5hYWYuZWR1LmF1MB4XDTA5MDUwNDA2MTgyNVoX
+DTI5MDUwNDA2MTgyNVowGTEXMBUGA1UEAxMOdmhvLmFhZi5lZHUuYXUwggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDWB4cjn/vxigCmLp1J4Y9OW84acUnO
+YFcb3piAy3fc+dhA6AVHCjLrh7tWRIycmcz5qqIbOFnS5qBqg/zBAAhpPGRHjJTd
+9J6iUN6bWXeaTTBAO9QDtYPt8iAymPFCgbr4lil5JuE9cg6uVgb2/RQlZqludxV6
+aUTbtJePJz5KAVMrlfHVguKjH5GpwVcBztMmtRgOPC37Ptyz9Wo/FxpkwpkZCmag
+tQUTBdSL1lr7ySW4CqH4QCgyplBJ2jOnG2IsGZ0TnCQ5cfNuB9Iw8uU5bBMiZvI+
+2xuDQV4KWyz3lbTHLPHk/Iw57/NdwOeKMLmmJRiRwuJJaOS4MNaPoWsbAgMBAAGj
+YzBhMEAGA1UdEQQ5MDeCDnZoby5hYWYuZWR1LmF1hiVodHRwczovL3Zoby5hYWYu
+ZWR1LmF1L2lkcC9zaGliYm9sZXRoMB0GA1UdDgQWBBTRu0lIvmQAgPzWEMhtz7Gm
+eYWEqDANBgkqhkiG9w0BAQUFAAOCAQEAUwiq3jCuhENSyehA2AjhmfBj8DaggSe/
+mRuHUi+IZgPtF09nasr9ZxNVs9S00pxPHjBWwFQ3p+6wY/qQZEQIE0j3iJ9Ly3IL
+RSHZiC0YlrdivcqvvTNc3SO+TW2LWWLbUMSs+IuMVPQpsPvUJ6XN5DuoJHByBbMB
+qgRIRXocTSssKfyRPuPtZHWnlvCgv2fzPmPJqa+z8hnSEdpBTSFCHHgoyRsaTGhg
+VscwWbqvj3YlQhVt62SMTQu82pKdD9I1mS75BHH7Ehb/PHCv7jCSaVc3ztPUquZ6
+wU7I1/N110XAqdxIAZo7giAij4IKE122u7bPYs8YlQ8JoMb4hPJY5g==
+</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </KeyDescriptor>
+    <ContactPerson contactType='administrative'>
+      <GivenName>Test</GivenName>
+      <SurName>User</SurName>
+      <EmailAddress>test@example.com</EmailAddress>
+      <TelephoneNumber>(567) 222 22222</TelephoneNumber>
+      <TelephoneNumber>(07) 1111 1111</TelephoneNumber>
+      <TelephoneNumber>0413 867 208</TelephoneNumber>
+    </ContactPerson>
+    <ArtifactResolutionService Binding='urn:oasis:names:tc:SAML:2.0:bindings:SOAP' Location='https://test.example.com/ars/artifact' index='100' isDefault='true' />
+    <ArtifactResolutionService Binding='urn:oasis:names:tc:SAML:2.0:bindings:SOAP' Location='https://test.example.com/ars/artifact2' index='101' isDefault='false' />
+    <SingleLogoutService Binding='urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST' Location='https://test.example.com/slo/POST' />
+    <ManageNameIDService Binding='urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect' Location='https://test.example.com/mnid/REDIRECT' />
+    <NameIDFormat>supported:nameid:format:urn</NameIDFormat>
+    <SingleSignOnService Binding='urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST' Location='https://test.example.com/sso/POST' />
+    <NameIDMappingService Binding='urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect' Location='https://test.example.com/nameidmappingserivce/REDIRECT' />
+    <AssertionIDRequestService Binding='urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect' Location='https://test.example.com/assertionidrequestservice/REDIRECT' />
+    <Attribute NameFormat='urn:oasis:names:tc:SAML:2.0:attrname-format:uri' Name='urn:oid:2.5.4.3' FriendlyName='commonName' />
+    <Attribute NameFormat='urn:oasis:names:tc:SAML:2.0:attrname-format:uri' Name='urn:oid:1.3.6.1.4.1.5923.1.1.1.7' FriendlyName='eduPersonEntitlement'>
+      <AttributeValue>urn:mace:test:attr:value:1</AttributeValue>
+      <AttributeValue>urn:mace:test:attr:value:2</AttributeValue>
+      <AttributeValue>urn:mace:test:attr:value:3</AttributeValue>
+    </Attribute>
+    <Attribute NameFormat='urn:oasis:names:tc:SAML:2.0:attrname-format:uri' Name='urn:oid:2.5.4.42' FriendlyName='givenName' />
+    <Attribute NameFormat='urn:oasis:names:tc:SAML:2.0:attrname-format:uri' Name='urn:oid:2.5.4.4' FriendlyName='surname' />
+  </IDPSSODescriptor>
+  <AttributeAuthorityDescriptor protocolSupportEnumeration='urn:oasis:names:tc:SAML:1.1:protocol urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:2.0:protocol'>
+    <Extensions>
+      <Scope regexp='false'>scope</Scope>
+    </Extensions>
+    <KeyDescriptor use='encryption'>
+      <ds:KeyInfo xmlns:ds='http://www.w3.org/2000/09/xmldsig#'>
+        <ds:KeyName>key1</ds:KeyName>
+        <ds:X509Data>
+          <ds:X509Certificate>
+MIIDJDCCAgygAwIBAgIVAO0iiNByCKsIji9RIiEglo5mhsc9MA0GCSqGSIb3DQEB
+BQUAMBkxFzAVBgNVBAMTDnZoby5hYWYuZWR1LmF1MB4XDTA5MDUwNDA2MTgyNVoX
+DTI5MDUwNDA2MTgyNVowGTEXMBUGA1UEAxMOdmhvLmFhZi5lZHUuYXUwggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDWB4cjn/vxigCmLp1J4Y9OW84acUnO
+YFcb3piAy3fc+dhA6AVHCjLrh7tWRIycmcz5qqIbOFnS5qBqg/zBAAhpPGRHjJTd
+9J6iUN6bWXeaTTBAO9QDtYPt8iAymPFCgbr4lil5JuE9cg6uVgb2/RQlZqludxV6
+aUTbtJePJz5KAVMrlfHVguKjH5GpwVcBztMmtRgOPC37Ptyz9Wo/FxpkwpkZCmag
+tQUTBdSL1lr7ySW4CqH4QCgyplBJ2jOnG2IsGZ0TnCQ5cfNuB9Iw8uU5bBMiZvI+
+2xuDQV4KWyz3lbTHLPHk/Iw57/NdwOeKMLmmJRiRwuJJaOS4MNaPoWsbAgMBAAGj
+YzBhMEAGA1UdEQQ5MDeCDnZoby5hYWYuZWR1LmF1hiVodHRwczovL3Zoby5hYWYu
+ZWR1LmF1L2lkcC9zaGliYm9sZXRoMB0GA1UdDgQWBBTRu0lIvmQAgPzWEMhtz7Gm
+eYWEqDANBgkqhkiG9w0BAQUFAAOCAQEAUwiq3jCuhENSyehA2AjhmfBj8DaggSe/
+mRuHUi+IZgPtF09nasr9ZxNVs9S00pxPHjBWwFQ3p+6wY/qQZEQIE0j3iJ9Ly3IL
+RSHZiC0YlrdivcqvvTNc3SO+TW2LWWLbUMSs+IuMVPQpsPvUJ6XN5DuoJHByBbMB
+qgRIRXocTSssKfyRPuPtZHWnlvCgv2fzPmPJqa+z8hnSEdpBTSFCHHgoyRsaTGhg
+VscwWbqvj3YlQhVt62SMTQu82pKdD9I1mS75BHH7Ehb/PHCv7jCSaVc3ztPUquZ6
+wU7I1/N110XAqdxIAZo7giAij4IKE122u7bPYs8YlQ8JoMb4hPJY5g==
+</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+      <EncryptionMethod Algorithm='http://www.w3.org/2001/04/xmlenc#tripledes-cbc' />
+    </KeyDescriptor>
+    <KeyDescriptor use='signing'>
+      <ds:KeyInfo xmlns:ds='http://www.w3.org/2000/09/xmldsig#'>
+        <ds:X509Data>
+          <ds:X509Certificate>
+MIIDJDCCAgygAwIBAgIVAO0iiNByCKsIji9RIiEglo5mhsc9MA0GCSqGSIb3DQEB
+BQUAMBkxFzAVBgNVBAMTDnZoby5hYWYuZWR1LmF1MB4XDTA5MDUwNDA2MTgyNVoX
+DTI5MDUwNDA2MTgyNVowGTEXMBUGA1UEAxMOdmhvLmFhZi5lZHUuYXUwggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDWB4cjn/vxigCmLp1J4Y9OW84acUnO
+YFcb3piAy3fc+dhA6AVHCjLrh7tWRIycmcz5qqIbOFnS5qBqg/zBAAhpPGRHjJTd
+9J6iUN6bWXeaTTBAO9QDtYPt8iAymPFCgbr4lil5JuE9cg6uVgb2/RQlZqludxV6
+aUTbtJePJz5KAVMrlfHVguKjH5GpwVcBztMmtRgOPC37Ptyz9Wo/FxpkwpkZCmag
+tQUTBdSL1lr7ySW4CqH4QCgyplBJ2jOnG2IsGZ0TnCQ5cfNuB9Iw8uU5bBMiZvI+
+2xuDQV4KWyz3lbTHLPHk/Iw57/NdwOeKMLmmJRiRwuJJaOS4MNaPoWsbAgMBAAGj
+YzBhMEAGA1UdEQQ5MDeCDnZoby5hYWYuZWR1LmF1hiVodHRwczovL3Zoby5hYWYu
+ZWR1LmF1L2lkcC9zaGliYm9sZXRoMB0GA1UdDgQWBBTRu0lIvmQAgPzWEMhtz7Gm
+eYWEqDANBgkqhkiG9w0BAQUFAAOCAQEAUwiq3jCuhENSyehA2AjhmfBj8DaggSe/
+mRuHUi+IZgPtF09nasr9ZxNVs9S00pxPHjBWwFQ3p+6wY/qQZEQIE0j3iJ9Ly3IL
+RSHZiC0YlrdivcqvvTNc3SO+TW2LWWLbUMSs+IuMVPQpsPvUJ6XN5DuoJHByBbMB
+qgRIRXocTSssKfyRPuPtZHWnlvCgv2fzPmPJqa+z8hnSEdpBTSFCHHgoyRsaTGhg
+VscwWbqvj3YlQhVt62SMTQu82pKdD9I1mS75BHH7Ehb/PHCv7jCSaVc3ztPUquZ6
+wU7I1/N110XAqdxIAZo7giAij4IKE122u7bPYs8YlQ8JoMb4hPJY5g==
+</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </KeyDescriptor>
+    <ContactPerson contactType='administrative'>
+      <GivenName>Test</GivenName>
+      <SurName>User</SurName>
+      <EmailAddress>test@example.com</EmailAddress>
+      <TelephoneNumber>(567) 222 22222</TelephoneNumber>
+      <TelephoneNumber>(07) 1111 1111</TelephoneNumber>
+      <TelephoneNumber>0413 867 208</TelephoneNumber>
+    </ContactPerson>
+    <AttributeService Binding='urn:oasis:names:tc:SAML:2.0:bindings:SOAP' Location='https://test.example.com:8443/idp/profile/SAML2/SOAP/AttributeQuery' />
+    <AssertionIDRequestService Binding='urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect' Location='https://test.example.com/assertionidrequestservice/REDIRECT' />
+    <NameIDFormat>supported:nameid:format:urn</NameIDFormat>
+    <Attribute NameFormat='urn:oasis:names:tc:SAML:2.0:attrname-format:uri' Name='urn:oid:2.5.4.3' FriendlyName='commonName' />
+    <Attribute NameFormat='urn:oasis:names:tc:SAML:2.0:attrname-format:uri' Name='urn:oid:1.3.6.1.4.1.5923.1.1.1.7' FriendlyName='eduPersonEntitlement'>
+      <AttributeValue>urn:mace:test:attr:value:1</AttributeValue>
+      <AttributeValue>urn:mace:test:attr:value:2</AttributeValue>
+      <AttributeValue>urn:mace:test:attr:value:3</AttributeValue>
+    </Attribute>
+    <Attribute NameFormat='urn:oasis:names:tc:SAML:2.0:attrname-format:uri' Name='urn:oid:2.5.4.42' FriendlyName='givenName' />
+    <Attribute NameFormat='urn:oasis:names:tc:SAML:2.0:attrname-format:uri' Name='urn:oid:2.5.4.4' FriendlyName='surname' />
+  </AttributeAuthorityDescriptor>
+  <Organization>
+    <OrganizationName xml:lang='en'>Test Organization</OrganizationName>
+    <OrganizationDisplayName xml:lang='en'>Test Organization Display</OrganizationDisplayName>
+    <OrganizationURL xml:lang='en'>http://example.com</OrganizationURL>
+  </Organization>
+</EntityDescriptor>

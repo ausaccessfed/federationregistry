@@ -225,7 +225,9 @@ class IdentityProviderService {
         entityDescriptor.active = false
       }
     }
+
     identityProvider.autoAcceptServices = params.idp.autoacceptservices == 'true'
+    identityProvider.attributeAuthorityOnly = params.idp.attributeauthorityonly == 'true'
     
     log.debug "Updating $identityProvider active: ${identityProvider.active}, requestSigned: ${identityProvider.wantAuthnRequestsSigned}"
     

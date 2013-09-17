@@ -32,6 +32,17 @@
         </td>
       </tr>
       <tr>
+        <th><g:message encodeAs="HTML" code="label.attributeauthorityonly"/></th>
+        <td>
+          <g:if test="${identityProvider.attributeAuthorityOnly}">
+            <span class="not-in-federation"><g:message encodeAs="HTML" code="label.yes" /></span>
+          </g:if>
+          <g:else>
+            <g:message encodeAs="HTML" code="label.no" />
+          </g:else>
+        </td>
+      </tr>
+      <tr>
         <th><g:message encodeAs="HTML" code="label.scope"/></th>
         <td>${fieldValue(bean: identityProvider, field: "scope")}</td>
       </tr>

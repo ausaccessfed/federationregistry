@@ -1,6 +1,6 @@
 <ContactPerson contactType='administrative'>
   <GivenName>Test</GivenName>
   <SurName>User</SurName>
-  <EmailAddress>test@example.com</EmailAddress>
+  <EmailAddress>mailto:test@example.com</EmailAddress>
   <TelephoneNumber>0413 867 208</TelephoneNumber>
 </ContactPerson>

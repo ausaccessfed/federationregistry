@@ -42,7 +42,7 @@ class MetadataGenerationService {
           Company(contactPerson.contact.organization.displayName)
         GivenName(contactPerson.contact.givenName)
         SurName(contactPerson.contact.surname)
-        EmailAddress(contactPerson.contact.email)
+        EmailAddress("mailto:${contactPerson.contact.email}")
         if(contactPerson.contact.workPhone)
           TelephoneNumber(contactPerson.contact.workPhone)
         if(contactPerson.contact.homePhone)

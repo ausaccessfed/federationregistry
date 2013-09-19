@@ -75,8 +75,8 @@ class AttributeFilterGenerationService {
         comment builder, "Federation pillar service. Thus all attributes are requested regardless of indicated IdP attribute support FR."
 
 			serviceProvider.attributeConsumingServices.each { acs ->
-				acs.requestedAttributes.sort{it.base.name}.each { ra ->
-					if(ra.approved) {
+				acs.requestedAttributes?.sort{it.base.name}.each { ra ->
+					if(ra.functioning()) {
 						if(identityProvider.attributes.findAll{it.base == ra.base}.size() == 1 || serviceProvider.forceAttributesInFilter) {
 							if(ra.base.specificationRequired) {
 								if(ra.values?.size() > 0) {
@@ -87,7 +87,7 @@ class AttributeFilterGenerationService {
 												"basic:Rule" ("xsi:type":"basic:AttributeValueString", value:v.value, ignoreCase:"true")
 												"basic:Rule" ("xsi:type":"basic:AttributeValueString", value:v.value, ignoreCase:"true")
 											}
-											else {	
+											else {
 												ra.values.sort{it.value}.each { v ->
 													"basic:Rule" ("xsi:type":"basic:AttributeValueString", value:v.value, ignoreCase:"true")
 												}

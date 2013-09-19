@@ -17,4 +17,10 @@ class RequestedAttribute extends Attribute {
 	static belongsTo = [attributeConsumingService: AttributeConsumingService]
 	
 	public String toString() {	"requestedattribute:[id:$id, isRequired: $isRequired]" }
+
+  public boolean functioning() {
+    // Ensure the requested attribute is approved and if requiring specification has 1 or more values present
+    approved && (base.specificationRequired ? values?.findAll{ it.approved }?.size() > 0 : true)
+  }
+
 }

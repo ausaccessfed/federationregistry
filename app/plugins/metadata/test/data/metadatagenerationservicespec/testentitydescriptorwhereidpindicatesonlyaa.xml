@@ -58,7 +58,7 @@ wU7I1/N110XAqdxIAZo7giAij4IKE122u7bPYs8YlQ8JoMb4hPJY5g==
     <ContactPerson contactType='administrative'>
       <GivenName>Test</GivenName>
       <SurName>User</SurName>
-      <EmailAddress>test@example.com</EmailAddress>
+      <EmailAddress>mailto:test@example.com</EmailAddress>
       <TelephoneNumber>(567) 222 22222</TelephoneNumber>
       <TelephoneNumber>(07) 1111 1111</TelephoneNumber>
       <TelephoneNumber>0413 867 208</TelephoneNumber>

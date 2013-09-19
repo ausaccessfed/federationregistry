@@ -1,4 +1,7 @@
 <SPSSODescriptor protocolSupportEnumeration='urn:oasis:names:tc:SAML:1.1:protocol urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:2.0:protocol'>
+  <Extensions>
+      <dsr:DiscoveryResponse xmlns:dsr="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" Binding="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" Location="https://test.example.com/Shibboleth.sso/DS" index="1" isDefault="true" />
+    </Extensions>
   <KeyDescriptor use='encryption'>
     <ds:KeyInfo xmlns:ds='http://www.w3.org/2000/09/xmldsig#'>
       <ds:KeyName>key1</ds:KeyName>
@@ -69,13 +72,8 @@ wU7I1/N110XAqdxIAZo7giAij4IKE122u7bPYs8YlQ8JoMb4hPJY5g==
   <AttributeConsumingService index='1' isDefault='false'>
     <ServiceName xml:lang='en'>Test Name 1</ServiceName>
     <ServiceName xml:lang='en'>Test Name 2</ServiceName>
-    <RequestedAttribute NameFormat='urn:oasis:names:tc:SAML:2.0:attrname-format:uri' Name='urn:oid:2.5.4.3' FriendlyName='commonName' isRequired='true' />
     <RequestedAttribute NameFormat='urn:oasis:names:tc:SAML:2.0:attrname-format:uri' Name='urn:oid:1.3.6.1.4.1.5923.1.1.1.7' FriendlyName='eduPersonEntitlement' isRequired='false'>
       <AttributeValue>urn:mace:test:attr:value:1</AttributeValue>
-      <AttributeValue>urn:mace:test:attr:value:2</AttributeValue>
-      <AttributeValue>urn:mace:test:attr:value:3</AttributeValue>
     </RequestedAttribute>
-    <RequestedAttribute NameFormat='urn:oasis:names:tc:SAML:2.0:attrname-format:uri' Name='urn:oid:2.5.4.42' FriendlyName='givenName' isRequired='false' />
-    <RequestedAttribute NameFormat='urn:oasis:names:tc:SAML:2.0:attrname-format:uri' Name='urn:oid:2.5.4.4' FriendlyName='surname' isRequired='false' />
   </AttributeConsumingService>
 </SPSSODescriptor>

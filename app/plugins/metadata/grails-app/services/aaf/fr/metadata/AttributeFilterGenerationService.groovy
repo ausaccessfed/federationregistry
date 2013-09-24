@@ -50,7 +50,7 @@ class AttributeFilterGenerationService {
 	def defaultReleasePolicy(builder, groupID) {
 		builder.mkp.yield "\n"
 		builder.AttributeFilterPolicy(id:"afp_default_for:$groupID") {
-			PolicyRequirementRule('xsi:type':"basic:ANY")
+			PolicyRequirementRule('xsi:type':'saml:AttributeRequesterInEntityGroup', 'groupID':groupID)
 
 			AttributeRule(attributeID:"persistentID") {
 				PermitValueRule("xsi:type" : "basic:ANY")

@@ -76,7 +76,11 @@
         <br><br>
       3. Configure Attribute Release
           <br>
-          Configure your Identity Provider to correctly release attributes to the federation as documented in <a href="http://support.aaf.edu.au/entries/22545567-Automating-Attribute-Release">Automating Attribute Release</a>. When asked for the value of <strong>[INTERNALID]</strong> please provide ${fieldValue(bean: identityProvider, field: "id")}.
+          Shibboleth Identity Providers can be configured with a dynamic Attribute Filter Policy for attribute release to ease administrative workload.
+          <br><br>
+          <g:message code="branding.fr.federationinfo.distribute.${grailsApplication.config.federation.environment}.attributefilter" args="${identityProvider.id}"/>
+          <br><br>
+          For details on how to configure this policy within your Shibboleth IdP please see <a href="http://support.aaf.edu.au/entries/22545567-Automating-Attribute-Release">http://support.aaf.edu.au/entries/22545567-Automating-Attribute-Release</a>.
       
         <br><br><br>
       

@@ -140,7 +140,7 @@
                     <g:message encodeAs="HTML" code="views.fr.foundation.identityprovider.show.attributefilter.description" />
                   </p>
                   <p>
-                    <g:message code="branding.fr.federationinfo.distribute.${grailsApplication.config.federation.environment}.attributefilter" args="${identityProvider.id}"/>
+                    <g:message code="branding.fr.federationinfo.distribute.${grailsApplication.config.federation.environment}.attributefilter" args="${[identityProvider.id as String]}" />
                   </p>
                   <p>
                     <g:message code="views.fr.foundation.identityprovider.show.attributefilter.configurationurl" />

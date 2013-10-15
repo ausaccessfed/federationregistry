@@ -10,9 +10,11 @@
   </div>
 </g:hasErrors>
 
-<div id="rapidconnect" class="alert alert-info">
-  <g:message code="branding.aaf.rapid" />
-</div>
+<g:if test="${g.message(code:'branding.aaf.rapid') != ''}">
+  <div id="rapidconnect" class="alert alert-info">
+    <g:message code="branding.aaf.rapid" />
+  </div>
+</g:if>
 
 <g:form action="${saveAction}" method="post" useToken="true" class="form-horizontal validating">
   <g:hiddenField name="active" value="true"/>

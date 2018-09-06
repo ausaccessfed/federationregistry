@@ -12,7 +12,7 @@ class ContactsController {
 	def allowedMethods = [save: 'POST', update: 'PUT']
 	
 	def list = {
-		[contactList: Contact.findAllWhere(active: true), contactTotal: Contact.count()]
+		[contactList: Contact.list(params), contactTotal: Contact.count()]
 	}
 
 	def show = {

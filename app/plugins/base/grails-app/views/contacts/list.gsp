@@ -13,6 +13,7 @@
           <th><g:message encodeAs="HTML" code='label.surname' /></th>
           <th><g:message encodeAs="HTML" code='label.email' /></th>
           <th><g:message encodeAs="HTML" code='label.organization' /></th>
+          <th><g:message encodeAs="HTML" code='label.active' /></th>
           <th/>
         </tr>
       </thead>
@@ -23,6 +24,7 @@
           <td>${fieldValue(bean: contact, field: "surname")}</td>
           <td><a href="mailto:${fieldValue(bean: contact, field: "email")}">${fieldValue(bean: contact, field: "email")}</a></td>
           <td>${fieldValue(bean: contact, field: "organization.displayName")}</td>
+          <td>${fieldValue(bean: contact, field: "active")}</td>
           <td><a href="${createLink(action:'show', id:contact.id)}" class="btn"><g:message encodeAs="HTML" code="label.view" default="View"/></a></td>
         </tr>
       </g:each>
